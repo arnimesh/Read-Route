@@ -1,0 +1,81 @@
+<%-layout('layouts/boilerplate')%>
+<link rel="stylesheet" href="/stylesheets/style.css">
+
+
+
+<div class="d-flex justify-content-end col-4 offset-8 ">
+  <form action="/blogs" method="GET" class="input-group">
+          <input type="text" class="form-control" type="text" name="search" placeholder="Search Any Blog" aria-label="Search">
+  <button class="btn btn-danger" type="submit">       <i class="fa fa-search"></i>
+  </button>
+
+</form>
+</div>
+
+<div style="color:rgb(151, 48, 48);margin-left:75px;">  ( click on circles to go to the blog source )</div>
+       
+  <div id="map"></div>
+  <div class="sidebar">
+      
+    <div class="heading">
+      <h1>Routes</h1>
+    </div>
+    <div id="reports" class="reports"></div>
+  </div>
+ 
+
+
+  <div  style="margin-top: 50%;">
+    <div class="text-center badge bg-danger mt-4 mb-5 col-4 offset-4"">
+      <% if(count>1) {%>
+        <h3 ><%=count  %> such blogs found</h3>
+      <% } else{ %>
+        <h3 >All Blogs</h3>
+      <% } %> 
+    </div>
+    <%var count= Object.keys(campgrounds).length; %> 
+   
+    <% for (let campground of campgrounds){%>
+    <div class="card" mb-3>
+        <div class="row">
+            <div class="col-md-4">
+                <%if(campground.images.length) {%>
+                <img class="img-fluid" alt="" src="<%=campground.images[0].url%>">
+                <% }else {%>
+                <img class="img-fluid" alt=""
+                    src='https://res.cloudinary.com/ducqvbmtm/image/upload/v1618028367/YelpCamp/dfutuspb3sa5tcds1fdt.jpg'
+                    >
+                <% } %>
+            </div>
+            
+            <div class="col-md-8 ">
+                <div class="card-body" >
+                    <h5 class="card-title"><%= campground.title %> </h5>
+                    <p class="card-text"><%= campground.description %></p>
+                    <p class="card-text text-muted">
+                        <%= campground.location%>
+                    </p>
+                    <div>
+                      <%
+                      
+                      var cnt=campground.likes.length;
+                      var percent=cnt/count;
+                     percent= Math.ceil(percent*100);
+                      %> 
+                    <i class="fas fa-exclamation-circle"></i> Unsafe(<%=percent %>%)
+                  </div>
+                    <a class="btn btn-primary" href="/blogs/<%=campground._id%>">View <%=campground.title%></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% }%>
+    </div> 
+
+ 
+  <script>
+    const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
+    const campgrounds = { features:<%- JSON.stringify(campgrounds) %>}
+</script>
+
+<script src="/javascripts/clusterMap.js"></script>

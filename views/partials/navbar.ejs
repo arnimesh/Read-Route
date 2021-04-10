@@ -1,0 +1,36 @@
+
+
+<nav class="navbar sticky-top navbar-expand-xl navbar-dark bg-dark ">
+
+    <div class="container-fluid ">
+        <a class="navbar-brand fas fa-globe" href="#">RR</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                
+                <a  class="nav-link active  fas fa-home"      href="/"> Home </a>
+                <a class="nav-link active  fas fa-paper-plane"  href="/blogs"> Read blogs</a>
+                <a class="nav-link active  fas fa-plus" href="/blogs/new"> Add Your Blog</a>
+                <a class="nav-link active  fas fa-plus" href="/more"> More</a>
+            </div>
+            <div class="navbar-nav ml-auto">
+                <% if(!currentUser) {%>
+                <a class="nav-link fas fa-sign-in-alt"  href="/login"> Login</a>
+                <a class="nav-link fas fa-user" href="/register"> Register</a>
+                <% } else {%>
+                  <h6 class="nav-link far-fa-grin">Hello <%= currentUser.username %> </h6>
+                <a class="nav-link fas fa-sign-out-alt" href="/logout">Logout</a>
+           
+
+                <% } %>
+            </div>
+           
+            
+               
+        </div>
+    </div>
+</nav>
+
