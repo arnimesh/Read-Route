@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;width: 100%;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feminista</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+    integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+</head>
+<style>
+    a{
+        color: rgb(2, 12, 9);
+    }
+    body{
+        width: 100%;
+        background-color:  #a48fd3f2;
+        padding: 0;
+        margin: 0;
+    }
+    h3{
+        margin: 0px;
+        padding: 15px;
+        background-color: rgb(132 47 49 / 28%);
+        font-family: Monsterrat;
+        font-size: 200%;
+        color:whitesmoke;  
+         
+    }
+    button{
+        background: transparent;
+        size:150%;
+        border:0px;
+    }
+   a{
+        margin-left:15px ;
+    }
+    #quote{
+     
+        
+        margin-top: 50px;
+    }
+    img{
+        width: 100%;
+        margin: 0;
+        
+    }
+    h2,h1{
+        text-align: center;
+        color: rgb(109, 192, 15);
+     
+    }
+    p{
+        width: 70%;
+        
+        font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
+        font-size: 150%;padding: 0;margin: 0;color:rgb(238, 233, 226);
+        z-index: 10;
+            }
+   .team{
+       display: block;
+       
+       height: 350px;
+       width: 300px;
+       margin-left: auto;
+       margin-right: auto;
+       border-radius: 20px;
+       
+   }
+   .com{
+       width: 430px;
+       display: inline-block;
+       text-align: center;
+       align-items: center;
+       margin: 10px auto;
+   }
+  
+   .contact{
+       display:block;
+       
+       color: beige;
+       font-size: larger;
+       
+       top:50%;
+       left:1%;
+    
+       opacity: 0;
+      
+   }
+    
+</style>
+
+<!--<body style="background-image: url('images/Home.jpg');
+opacity: 0.9;
+height:100%;background-position:center;
+background-repeat:no-repeat;background-size: cover;
+overflow: hidden;
+background-attachment: fixed;">-->
+<body>
+    <h3>
+        
+        <a  href="/home"    >Home</a>
+
+        <a   href="/about"   >About</a>
+        <a   href="/blogs"   >Read Blogs</a>
+        <b><a href="#" >Team</a></b>
+        <a  href="/login" style="float:right">Login</a>
+        <a href="/register"   style="float:right">Register</a>
+        
+    </h3>
+<div style=" background-image: url('images/about.jpg');background-repeat: no-repeat; background-size: cover; overflow: hidden;">
+ <h1 >TEAM</h1>
+ <br>
+ <br>
+ <br>
+ <div class="com"style="">
+<img class="team" src="images/shubham.jpg">
+<div class="contact">MOBILE: 7318227753  EMAIL:kshubham175@gmail.com</div>
+</div>
+<div class="com"style="">
+    <img class="team" src="images/arnimesh.png">
+    <div class="contact">MOBILE: 7424961073 EMAIL:kshubham175@gmail.com</div>
+    </div>
+    <div class="com"style="">
+        <img class="team" src="images/abhimesh.jpg">
+        <div class="contact">MOBILE: 9760643190 EMAIL:kshubham175@gmail.com</div>
+        </div>
+        
+ <section id="quote">
+    
+    <div id="quote1" style="width: 40%;margin:0px auto 0;text-align: center;">
+        <!--<span style="font-size:100px;opacity:0.5">&#10077;</span>-->
+        
+        <img src="images/home_2.png">
+        
+    </div>
+
+</section>
+</div>
+
+<footer class="footer bg-dark py-3 mt-auto">
+    <div class="container">
+        <span class="text-muted">&copy; hack36 2021</span>
+    </div>
+</footer>
+<script >
+    function change()
+    {
+        this.style.opacity=0.5;
+        for(var j=0;j<a.length;j++)
+        if(a[j]===this){b[j].style.opacity=1;console.log(j);break;}
+    }
+    function change1()
+    {
+        this.style.opacity=1;
+        for(var j=0;j<a.length;j++)
+        if(a[j]===this){b[j].style.opacity=0;break;}
+    }
+    var a=document.getElementsByClassName('team');
+    var b=document.getElementsByClassName('contact');
+    for(var i=0;i<a.length;i++)
+    {
+        a[i].onmouseover=change;
+        a[i].onmouseout=change1;
+        
+    }
+    </script>
+
+</body>
+
+</html>
